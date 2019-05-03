@@ -1,10 +1,4 @@
-CREATE DATABASE GreenIoT;
-USE GreenIoT;
-
-CREATE TABLE rpi(
-	id INT AUTO_INCREMENT,
-    light BOOLEAN DEFAULT 0,
-    temp FLOAT DEFAULT 60,
-    PRIMARY KEY(id)
-);
-
+-- Drops the blogger if it exists currently --
+DROP DATABASE IF EXISTS blogger;
+-- Creates the "blogger" database --
+CREATE DATABASE blogger;

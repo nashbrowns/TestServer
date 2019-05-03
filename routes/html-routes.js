@@ -6,7 +6,6 @@
 // =============================================================
 var path = require("path");
 
-
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -15,19 +14,16 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/view.html"));
+    res.sendFile(path.join(__dirname, "../public/rpi.html"));
   });
 
-  // add route loads the add.html page,
-  // where users can enter new characters to the db
-  app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add.html"));
+  app.get("/cms", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/cms.html"));
   });
 
-  // all route loads the all.html page,
-  // where all characters in the db are displayed
-  app.get("/all", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/all.html"));
+  // blog route loads blog.html
+  app.get("/blog", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
 };
