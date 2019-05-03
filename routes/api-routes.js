@@ -57,12 +57,60 @@ module.exports = function(app) {
       });
   });
 
+  //RPI Routes
+
+  app.get("/api/rpi/all", function(req, res) {
+    db.Rpi.findAll({}).then( function(allPi){
+      res.json(allPi);
+    });
+  });
+  
   app.post("/api/rpi", function(req, res) {
     db.Rpi.create({
       light: 0,
       temp: 0
     }).then(function(newPi) {
       res.json(newPi);
+    });
+  });
+
+  app.put("/api/rpi/light/:light/:id", function(req, res){
+    lightVal = req.params.light;
+
+    if( lightVal === '0'){
+      lightVal = 0;
+    }
+    else if( lightVal === '1'){
+      lightVal = 1;
+    }
+    else{
+      lightVal = 0;
+    }
+
+    db.Rpi.update({
+      light: lightVal
+    },{
+      where: {
+        id: req.params.id
+      }
+    }).then(function(updatePi){
+      res.json(updatePi);
+    });
+  });
+
+  app.put("/api/rpi/temp/:temp/:id", function(req, res){
+    
+    tempVal = parseFloat(req.params.temp);
+
+
+    db.Rpi.update({
+      temp: tempVal
+    },{
+      where: {
+        id: req.params.id
+      }
+    }).then(function(updatePi){
+      res.json(updatePi);
     });
   });
 
