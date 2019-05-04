@@ -7,11 +7,11 @@
     "port": 3306,
     "dialect": "mysql"
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+  "jaws": {
+    "username": "jej2qm953tzdzw4u",
+    "password": "ec3nrnznb9s0xebt",
+    "database": "jhuvgnvyn1kzbe74",
+    "host": "s0znzigqvfehvff5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql"
   },
